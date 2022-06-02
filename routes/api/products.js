@@ -2,6 +2,12 @@ const express = require("express")
 let router = express.Router();
 const validateProduct = require("../../middlewares/validateProduct")
 var { Product } = require ("../../models/product.js")
+var cors = require('cors');
+const { append } = require("express/lib/response");
+app.use(cors({
+    origin:"*",
+    methods:['GET','POST','PUT','DELETE'],
+}));
 router.get("/", async(req,res) =>{
     let page = Number(req.query.page? req.query.page:1);
     let perPage = Number(req.query.perPage ? req.query.perPage : 10);

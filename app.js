@@ -5,12 +5,18 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require("mongoose")
 var indexRouter = require('./routes/index');
+var cors = require('cors');
 
 var productsRouter = require('./routes/api/products');
 var usersRouter = require('./routes/api/users');
 var config = require("config");
 var app = express();
+app.use(
+  cors({
+    origin: "*",
 
+    }  )
+)
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
