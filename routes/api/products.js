@@ -3,6 +3,7 @@ let router = express.Router();
 const validateProduct = require("../../middlewares/validateProduct")
 var { Product } = require ("../../models/product.js")
 var cors = require('cors');
+var app = express();
 const { append } = require("express/lib/response");
 app.use(cors({
     origin:"*",
